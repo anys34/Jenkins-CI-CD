@@ -10,4 +10,8 @@ class JenkinsApplicationTests {
     void contextLoads() {
     }
 
+    @Test
+    void hello() {
+    }
+
 }
