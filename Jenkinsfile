@@ -43,5 +43,22 @@ pipeline {
                 }
             }
         }
+
+        stage('deploy') {
+            steps {
+                sshPublisher(
+                    publishers: [
+                        sshPublisherDesc(
+                            configName: 'ec2',
+                            transfers: [
+                                sshTransfer(
+                                    execCommand: 'sh /home/ubuntu/jenkins/deploy.sh'
+                                )
+                            ]
+                        )
+                    ]
+                )
+            }
+        }
     }
 }
