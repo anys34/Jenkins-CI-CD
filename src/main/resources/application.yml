@@ -2,3 +2,6 @@ management:
   endpoints:
     web:
       base-path: "/manage"
+
+env-test:
+  env: ${env_test}
