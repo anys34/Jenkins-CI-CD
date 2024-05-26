@@ -5,3 +5,11 @@ management:
 
 env-test:
   env: ${env_test}
+
+spring:
+  config:
+    import: optional:configserver:http://localhost:8888/
+  cloud:
+    config:
+      name: config
+      profile: ${profile}
